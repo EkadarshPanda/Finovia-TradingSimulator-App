@@ -1,0 +1,15 @@
+a { color: #35fa71; text-decoration: none; }
+
+button {
+  background: #35fa71;
+  color: #1a1d23;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #2be07d;
+}
