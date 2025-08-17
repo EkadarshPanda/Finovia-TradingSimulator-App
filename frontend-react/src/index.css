@@ -1,0 +1,83 @@
+/* Body base styling */
+body {
+  background-color: #111827; /* Very dark background for the entire app */
+  color: #e5e7eb; /* Light gray text for readability */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Ensure consistent viewport handling */
+  height: 100%;
+  width: 100%;
+}
+
+/* Ensure consistent viewport units across browsers */
+html {
+  height: 100%;
+  width: 100%;
+  /* Prevent zoom on mobile */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Fix for viewport units on mobile browsers */
+@supports (-webkit-touch-callout: none) {
+  .dashboard-container,
+  .login-page {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Ensure consistent rendering across browsers */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make sure links and buttons adopt accent color */
+a {
+  color: #3cffa6; /* light teal accent similar to dashboard */
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #3cffa6; /* Accent color consistent with dashboard */
+  color: #111827;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #35fa71;
+}
+
+/* Scrollbar styling for modern browsers */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3cffa6;
+  border-radius: 10px;
+  border: 2px solid #111827;
+}

@@ -1,0 +1,354 @@
+/* MyHoldingsWidget Styles */
+.holdings-widget {
+  background: #22252b;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+  border: 1px solid #313343;
+}
+
+.holdings-widget:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px 0 rgba(56,189,248,0.18), 0 10px 10px -5px rgba(56,189,248,0.10);
+}
+
+/* Header */
+.holdings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #31343a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.holdings-header:hover {
+  background: rgba(60, 255, 166, 0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: -8px -12px 12px -12px;
+}
+
+.holdings-header h3 {
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.holdings-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.expand-arrow {
+  color: #b0b8c1;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+}
+
+.expand-arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.refresh-btn {
+  background: #3cffa6;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+}
+
+.refresh-btn:hover {
+  background: #4ade80;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(60, 255, 166, 0.3);
+}
+
+.refresh-btn:active {
+  transform: translateY(0) scale(1.02);
+}
+
+/* Collapsible Content */
+.holdings-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.holdings-content.expanded {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+/* Summary Statistics */
+.holdings-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: rgba(60, 255, 166, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(60, 255, 166, 0.1);
+  transition: all 0.3s ease;
+}
+
+.holdings-summary:hover {
+  background: rgba(60, 255, 166, 0.08);
+  border-color: rgba(60, 255, 166, 0.2);
+  box-shadow: 0 4px 12px rgba(60, 255, 166, 0.1);
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.summary-item:hover {
+  background: rgba(60, 255, 166, 0.1);
+  transform: translateY(-2px);
+}
+
+.summary-label {
+  color: #b0b8c1;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: all 0.2s ease;
+}
+
+.summary-value.positive {
+  color: #22c55e;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+}
+
+.summary-value.negative {
+  color: #ef4444;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+}
+
+/* Table Styles */
+.holdings-table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #1a1d23;
+  border: 1px solid #31343a;
+  transition: all 0.3s ease;
+}
+
+.holdings-table-container:hover {
+  border-color: #3cffa6;
+  box-shadow: 0 4px 12px rgba(60, 255, 166, 0.1);
+}
+
+.holdings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.holdings-table th {
+  background: #2a2d33;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 16px 12px;
+  text-align: left;
+  border-bottom: 2px solid #31343a;
+}
+
+.holdings-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.holdings-table th.sortable:hover {
+  background: #3a3d43;
+  color: #3cffa6;
+}
+
+.holdings-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #31343a;
+  color: #eaeaea;
+  text-align: left;
+}
+
+.holdings-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.holdings-table tbody tr:hover {
+  background: rgba(60, 255, 166, 0.08);
+}
+
+.holdings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Symbol Cell */
+.symbol-cell {
+  font-weight: 600;
+}
+
+.symbol {
+  color: #3cffa6;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* P/L Colors */
+.positive {
+  color: #22c55e !important;
+  font-weight: 600;
+}
+
+.negative {
+  color: #ef4444 !important;
+  font-weight: 600;
+}
+
+/* Loading and Error States */
+.loading-spinner {
+  text-align: center;
+  color: #b0b8c1;
+  padding: 40px 20px;
+  font-size: 16px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.error-message {
+  color: #ef4444;
+  text-align: center;
+  padding: 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 8px;
+  margin: 16px 0;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  transition: all 0.2s ease;
+}
+
+.error-message:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.retry-btn {
+  background: #3cffa6;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 16px auto;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background: #4ade80;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(60, 255, 166, 0.3);
+}
+
+.retry-btn:active {
+  transform: translateY(0) scale(1);
+}
+
+/* No Holdings State */
+.no-holdings {
+  text-align: center;
+  padding: 40px 20px;
+  color: #b0b8c1;
+  transition: all 0.2s ease;
+}
+
+.no-holdings:hover {
+  color: #9ca3af;
+}
+
+.no-holdings p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .holdings-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .summary-value {
+    font-size: 16px;
+  }
+  
+  .holdings-table {
+    font-size: 12px;
+  }
+  
+  .holdings-table th,
+  .holdings-table td {
+    padding: 10px 8px;
+  }
+  
+  .holdings-table-container {
+    margin: 0 -12px;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .holdings-summary {
+    grid-template-columns: 1fr;
+  }
+  
+  .holdings-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .holdings-actions {
+    align-self: flex-end;
+  }
+} 

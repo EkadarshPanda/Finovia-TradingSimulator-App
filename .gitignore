@@ -1,0 +1,26 @@
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+*.DS_Store
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+/backend/target/
+
+# Build files
+/frontend-react/dist/
+/frontend-react/.vite/
+
+# Secret files - VERY IMPORTANT
+# This will ignore your application.properties file to keep your API keys safe.
+# We will create a template file instead.
+/backend/src/main/resources/application.properties
+
+# Other generated files
+npm-debug.log*
+yarn-error.log*
